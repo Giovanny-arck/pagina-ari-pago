@@ -7,7 +7,6 @@
   <link rel="icon" href="/logo-ari.jpeg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -105,15 +104,16 @@
     .progress-bubble {
       position: absolute;
       top: -35px;
-      transform: translateX(50%);
+      left: 0; /* AJUSTE: Posição inicial da contagem */
+      transform: translateX(-50%); /* AJUSTE: Centraliza a contagem */
       background: #0f172a;
       color: white;
       padding: 4px 8px;
       border-radius: 8px;
       font-size: 0.95rem;
       font-weight: 600;
-      right: 0;
       white-space: nowrap;
+      transition: left 0.1s ease-in-out; /* Adiciona suavidade */
     }
 
     .progress-image-wrapper {
@@ -126,11 +126,11 @@
     .progress-image {
       position: absolute;
       top: 0;
-      left: 50%;
-      transform: translateX(-40%);
+      left: 0; /* AJUSTE: Posição inicial da imagem */
+      transform: translateX(-50%); /* AJUSTE: Centraliza a imagem perfeitamente */
       width: 40px;
       height: auto;
-      transition: left 0.2s ease-in-out;
+      transition: left 0.1s ease-in-out; /* Adiciona suavidade */
     }
 
     .box {
@@ -267,10 +267,8 @@
   </style>
 </head>
 <body>
-  <!-- LOGO -->
   <img src="/imagens/capa3_.jpeg" alt="Logo ARI" class="logo" />
 
-  <!-- PROGRESSO -->
   <div class="progress-container">
     <div class="progress-text">
       <span>!</span>
@@ -280,19 +278,17 @@
       </div>
     </div>
 
-    <!-- IMAGEM DO BALÃO -->
     <div class="progress-image-wrapper">
       <img src="/imagens/95__.jpeg" alt="95%" class="progress-image" id="progressImage" />
     </div>
 
     <div class="progress-bar">
       <div class="progress-bar-inner" id="progressBar">
-        <div class="progress-bubble" id="progressBubble">95%</div>
+        <div class="progress-bubble" id="progressBubble">0%</div>
       </div>
     </div>
   </div>
 
-  <!-- BOX 1 -->
   <div class="box">
     <p>Você garantiu sua vaga no evento que acontece no dia <strong>27 de agosto, às 19h</strong>.</p>
     <p>
@@ -305,7 +301,6 @@
     </a>
   </div>
 
-  <!-- BOX 2 -->
   <div class="box">
     <p>
       Complete essa breve pesquisa para contar-nos um pouco de como é o seu perfil de investimento.
@@ -316,7 +311,6 @@
     </a>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <p style="color: #4b5563;">Nos vemos lá!</p>
     <p style="color: #6b7280; font-size: 0.9rem;">Nos siga nas redes sociais</p>
@@ -336,14 +330,13 @@
     </div>
   </footer>
 
-  <!-- JS ANIMAÇÃO BARRA + IMAGEM -->
   <script>
     window.addEventListener("load", () => {
       const bar = document.getElementById("progressBar");
       const bubble = document.getElementById("progressBubble");
       const image = document.getElementById("progressImage");
 
-      let width = 1;
+      let width = 0;
       const target = 95;
 
       const interval = setInterval(() => {
@@ -353,7 +346,9 @@
           width++;
           bar.style.width = width + "%";
           bubble.innerText = width + "%";
-          bubble.style.right = (100 - width) + "%";
+          
+          // AJUSTE: Move a contagem e a imagem usando 'left'
+          bubble.style.left = width + "%";
           image.style.left = width + "%";
         }
       }, 20);
@@ -363,6 +358,5 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=937655368552843&ev=PageView&noscript=1"
   /></noscript>
-  <!-- End Meta Pixel Code -->
-</body>
+  </body>
 </html>
