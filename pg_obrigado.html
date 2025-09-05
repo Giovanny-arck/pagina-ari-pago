@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado!</title>
+  <link rel="icon" href="/logo-ari.jpeg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '937655368552843');
+  fbq('track', 'PageView');
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #FAFAFA;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      min-height: 100vh;
+    }
+
+    img.logo {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-container {
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 2rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .progress-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .progress-text-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .progress-text span {
+      background: #FACC15;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .progress-bar {
+      position: relative;
+      background: #e5e7eb;
+      border-radius: 9999px;
+      height: 18px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .progress-bar-inner {
+      background: #3F0140;
+      width: 0%;
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.1s ease-in-out;
+      position: relative;
+    }
+
+    .progress-bubble {
+      position: absolute;
+      top: -35px;
+      transform: translateX(50%);
+      background: #0f172a;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      right: 0;
+      white-space: nowrap;
+    }
+
+    .progress-image-wrapper {
+      position: relative;
+      height: 60px;
+      margin-bottom: -10px;
+      width: 100%;
+    }
+
+    .progress-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-40%);
+      width: 40px;
+      height: auto;
+      transition: left 0.2s ease-in-out;
+    }
+
+    .box {
+      background: #EDE9E7;
+      border-radius: 30px;
+      width: 100%;
+      max-width: 800px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.6s ease-out;
+      text-align: center;
+    }
+
+    p {
+      color: #374151;
+      margin: 0.8rem 0;
+      line-height: 1.5;
+      font-size: clamp(14px, 3vw, 16px);
+      font-weight: 500;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .btn-green {
+      background-color: #16a34a;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background-color: #15803d;
+    }
+
+    .btn-blue {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .btn-blue:hover {
+      background-color: #1e40af;
+    }
+
+    footer {
+      margin-top: 0.5rem;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+      text-align: center;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .social a {
+      color: #4b5563;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s;
+    }
+
+    .social a:hover {
+      color: #2563eb;
+    }
+
+    .social svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Media Queries para ajustes específicos */
+    @media (max-width: 600px) {
+      .box {
+        padding: 1rem;
+        border-radius: 20px;
+      }
+      
+      .progress-text {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .progress-text span {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+      }
+      
+      .button {
+        padding: 0.6rem 1rem;
+      }
+      
+      .social {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGO -->
+  <img src="/imagens/capa3_.jpeg" alt="Logo ARI" class="logo" />
+
+  <!-- PROGRESSO -->
+  <div class="progress-container">
+    <div class="progress-text">
+      <span>!</span>
+      <div class="progress-text-content">
+        <div>Você está há 2 passos de</div>
+        <div>terminar seu cadastro.</div>
+      </div>
+    </div>
+
+    <!-- IMAGEM DO BALÃO -->
+    <div class="progress-image-wrapper">
+      <img src="/imagens/95__.jpeg" alt="95%" class="progress-image" id="progressImage" />
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-bar-inner" id="progressBar">
+        <div class="progress-bubble" id="progressBubble">95%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX 1 -->
+  <div class="box">
+    <p>Você garantiu sua vaga no evento que acontece no dia <strong>27 de agosto, às 19h</strong>.</p>
+    <p>
+      Para não perder nenhum detalhe e ser avisado assim que o evento começar,
+      entre agora no nosso grupo exclusivo no WhatsApp. Lá você receberá lembretes,
+      conteúdos extras e todas as atualizações em primeira mão.
+    </p>
+    <a class="button btn-green" href="https://chat.whatsapp.com/ErOpvj6XJeuFWsFVIHk2mo?mode=ac_t" target="_blank" rel="noopener noreferrer">
+      Entrar no grupo de WhatsApp
+    </a>
+  </div>
+
+  <!-- BOX 2 -->
+  <div class="box">
+    <p>
+      Complete essa breve pesquisa para contar-nos um pouco de como é o seu perfil de investimento.
+      Sua opinião é muito importante para nós!
+    </p>
+    <a class="button btn-blue" href="https://forms.gle/CLYTCyh7xEJjbecp6" target="_blank" rel="noopener noreferrer">
+      Fazer a pesquisa
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="color: #4b5563;">Nos vemos lá!</p>
+    <p style="color: #6b7280; font-size: 0.9rem;">Nos siga nas redes sociais</p>
+    <div class="social">
+      <a href="https://instagram.com/fabhrcioari" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7Zm5.75-1a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5Z" />
+        </svg>
+        @fabhrcioari
+      </a>
+      <a href="https://linkedin.com/in/fabhrcioari" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24">
+          <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5ZM3 8.75h4v12.5H3V8.75Zm6.75 0H14v1.75h.1c.59-1.12 2.03-2.3 4.18-2.3c4.47 0 5.3 2.94 5.3 6.75v6.3h-4v-5.59c0-1.33-.03-3.04-1.85-3.04c-1.85 0-2.13 1.45-2.13 2.94v5.69H9.75V8.75Z" />
+        </svg>
+        @fabhrcioari
+      </a>
+    </div>
+  </footer>
+
+  <!-- JS ANIMAÇÃO BARRA + IMAGEM -->
+  <script>
+    window.addEventListener("load", () => {
+      const bar = document.getElementById("progressBar");
+      const bubble = document.getElementById("progressBubble");
+      const image = document.getElementById("progressImage");
+
+      let width = 1;
+      const target = 95;
+
+      const interval = setInterval(() => {
+        if (width >= target) {
+          clearInterval(interval);
+        } else {
+          width++;
+          bar.style.width = width + "%";
+          bubble.innerText = width + "%";
+          bubble.style.right = (100 - width) + "%";
+          image.style.left = width + "%";
+        }
+      }, 20);
+    });
+  </script>
+
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=937655368552843&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</body>
+</html>
