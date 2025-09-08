@@ -1,3 +1,5 @@
+// Conteúdo de script.js modificado
+
 document.addEventListener('DOMContentLoaded', function() {
   const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
   const urlParams = new URLSearchParams(window.location.search);
@@ -60,12 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
           fbq('track', 'CompleteRegistration');
         }
 
-        alert('Cadastro realizado com sucesso. Redirecionando...');
         form.reset();
         
-        setTimeout(() => {
-          window.location.href = "pg_obrigado.html";
-        }, 1000);
+        // MODIFICAÇÃO: Redirecionamento imediato sem alerta.
+        window.location.href = "pg_obrigado.html";
 
       } else {
         throw new Error('Erro ao enviar formulário');
