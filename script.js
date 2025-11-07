@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
               // ============================================================
               // 1. ENVIO PRINCIPAL (Validação Crítica - n8n)
               // ============================================================
-              const response1 = await fetch('https://n8nwebhook.arck1pro.shop/webhook/lp-rd', {
+              const response1 = await fetch('https://n8nwebhook.arck1pro.shop/webhook/crmeventonovembro', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(formData)
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
               // ============================================================
               // Usamos try/catch aqui para que, se este falhar, o cadastro NÃO seja perdido.
               try {
-                  await fetch('https://n8nwebhook.arck1pro.shop/webhook/lp-ari-rdstationcrm', {
+                  await fetch('https://n8nwebhook.arck1pro.shop/webhook/mktcrmeventonovembro', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify(formData)
