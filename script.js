@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // 4. Redirecionamento
-        window.location = 'obrigado.html';
+        window.location = 'pg_obrigado.html';
 
       } catch (error) {
         alert('Ocorreu um erro ao enviar o cadastro. Tente novamente.');
