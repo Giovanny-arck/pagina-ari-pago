@@ -467,3 +467,16 @@ body {
     margin-left: 0;
   }
 }
+
+/* Biblioteca Intl-Tel-Input (Estilização extra) */
+.iti__country-list {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.iti__country-list .iti__country { color: #f7fafc; }
+.iti__country-list .iti__dial-code { color: #a0aec0; }
+.iti__country-list .iti__country.iti__highlight { background-color: #4a5568; }
+.iti__country-list::-webkit-scrollbar { width: 8px; }
+.iti__country-list::-webkit-scrollbar-track { background: #2d3748; }
+.iti__country-list::-webkit-scrollbar-thumb { background-color: #4a5568; border-radius: 4px; }
