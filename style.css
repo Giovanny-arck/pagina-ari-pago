@@ -176,7 +176,7 @@ body {
   height: 45px;
   border-radius: 8px;
   border: none;
-  background-color: var(--button-grey);
+  background-color: var(--button-green);
   color: white;
   font-weight: 600;
   font-size: 14px;
