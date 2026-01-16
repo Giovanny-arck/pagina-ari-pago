@@ -108,23 +108,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="form-group">
             <input type="email" name="email" placeholder="Email*" class="form-input" required>
           </div>
-          
-          <div class="form-group">
-            <input type="tel" name="whatsapp" placeholder="DDD + Numero*" class="form-input" required>
-          </div>
 
           <div class="form-group">
             <input type="text" name="profissao" placeholder="Profissão*" class="form-input" required>
           </div>
           
           <div class="form-group">
-            <select name="valor_investimento" class="form-select" required>
+            <input type="tel" id="whatsapp" name="whatsapp" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <select name="investe_atualmente" id="investe_atualmente" class="form-select" required>
+              <option value="">Você já investe em alguma modalidade?</option>
+              <option value="Sim, invisto em imóveis">Sim, invisto em imóveis</option>
+              <option value="Sim, invisto em renda fixa">Sim, invisto em renda fixa</option>
+              <option value="Sim, invisto em fundos imobiliários">Sim, invisto em fundos imobiliários</option>
+              <option value="Não invisto ainda">Não invisto ainda</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select name="prazo_investimento" id="prazo_investimento" class="form-select" required>
+              <option value="">Você está pronto para investir nos próximos:</option>
+              <option value="15 dias">15 dias</option>
+              <option value="30 dias">30 dias</option>
+              <option value="60 dias">60 dias</option>
+              <option value="Ainda estou avaliando">Ainda estou avaliando</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select name="ciente_emprestimos" id="ciente_emprestimos" class="form-select" required>
+              <option value="">Você está ciente de que não ofertamos empréstimos?</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <select name="valor_investimento" id="valor_investimento" class="form-select" required>
               <option value="">Qual o valor inicial do seu investimento?*</option>
               <option value="50 mil">50 mil</option>
-              <option value="50-100">De 50 mil a 100 mil</option>
-              <option value="100-150">De 100 mil a 150 mil</option>
-              <option value="150-200">De 150 mil a 200 mil</option>
-              <option value="Acima de 200 mil">Acima de 200 mil</option>
+              <option value="50-99">De 50 mil a 99 mil</option>
+              <option value="100-199">De 100 mil a 199 mil</option>
+              <option value="200-399">De 200 mil a 399 mil</option>
+              <option value="Acima de 400 mil">Acima de 400 mil</option>
             </select>
           </div>
 
