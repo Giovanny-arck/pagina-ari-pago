@@ -91,11 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.warn('Erro de conexão com RD Mkt', rdError);
         }
         
-        // 3. DISPARO DO PIXEL
-        if (typeof fbq === 'function') {
-          fbq('track', 'CompleteRegistration');
-        }
-        
         // 4. Redirecionamento
         window.location = 'pg_obrigado.html';
 
